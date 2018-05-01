@@ -1,13 +1,17 @@
 package pl.artur.module.db.entity;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Item {
 	
 	long id;
 	String itemName;
 	int amount;
-		
-	public Item(long id, String itemName, int amount) {
-		this.id = id;
+
+	 @JsonCreator
+	 Item( @JsonProperty("itemName") String itemName,
+			 @JsonProperty("amount")int amount) {
 		this.itemName = itemName;
 		this.amount = amount;
 	}

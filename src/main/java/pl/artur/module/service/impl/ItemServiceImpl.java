@@ -29,7 +29,7 @@ public class ItemServiceImpl implements ItemService {
 
 	@Override
 	public void insertItem(Item item) {
-		itemMapper.insertItem(item.getId(), item.getItemName(), item.getAmount());
+		itemMapper.insertItem(item.getItemName(), item.getAmount());
 		
 	}
 
