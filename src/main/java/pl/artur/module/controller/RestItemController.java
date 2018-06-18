@@ -17,12 +17,19 @@ import pl.artur.module.service.ItemService;
 public class RestItemController {
 	
 	@Autowired
-	ItemService itemSerivce;
+	private ItemService itemSerivce;
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST,  produces = "application/json")
 	@ResponseBody
 	public Item addItem(@RequestBody Item item) {
 		itemSerivce.insertItem(item);
+		return item;
+	}
+	
+	@RequestMapping(value="/addTrans", method=RequestMethod.POST,  produces = "application/json")
+	@ResponseBody
+	public Item addItemTransactional(@RequestBody Item item) {
+		itemSerivce.insertItemTransactional(item);
 		return item;
 	}
 

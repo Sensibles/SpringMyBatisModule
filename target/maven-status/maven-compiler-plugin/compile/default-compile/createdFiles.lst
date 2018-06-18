@@ -1,0 +1,8 @@
+pl\artur\module\kafka\KafkaEventListener.class
+pl\artur\module\db\mapper\ItemMapper.class
+pl\artur\module\SpringMyBatisModuleApplication.class
+pl\artur\module\service\impl\ItemServiceImpl.class
+pl\artur\module\controller\RestItemController.class
+pl\artur\module\db\entity\Item.class
+pl\artur\module\service\ItemService.class
+pl\artur\module\DbConfig.class

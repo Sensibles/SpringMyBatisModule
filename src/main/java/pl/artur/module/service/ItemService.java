@@ -10,4 +10,6 @@ public interface ItemService {
 	Item getItemForId(long id);
 	
 	void insertItem(Item item);
+	
+	void insertItemTransactional(Item item);
 }

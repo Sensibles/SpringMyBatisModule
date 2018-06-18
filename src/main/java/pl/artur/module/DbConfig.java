@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.transaction.managed.ManagedTransactionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
@@ -51,6 +52,8 @@ public class DbConfig {
 	@Primary
 	public SqlSessionFactory sqlSessionFactory() throws Exception {
 		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+		sessionFactory.setTransactionFactory(new ManagedTransactionFactory());
+
 		sessionFactory.setDataSource(dataSource());
 		return sessionFactory.getObject();
 	}
